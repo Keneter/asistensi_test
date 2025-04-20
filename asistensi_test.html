@@ -14,63 +14,118 @@
             width: 100%;
             margin: 0 auto 30px auto;
         }
+        .info-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://source.unsplash.com/random/800x600?lab');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+        }
+        .lab-img {
+            max-width: 300px;
+            margin: 2rem auto;
+            border: 3px solid white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+            font-size: 1.1rem;
+        }
+        .feature-list li {
+            margin-bottom: 0.8rem;
+        }
     </style>
 </head>
 <body class="bg-light">
-    <main class="container mt-5">
-        <section class="card shadow">
-            <article class="card-body">
-                <h2 class="text-center mb-3">Reservasi Laboratorium</h2>
-                <hr>
-                <p class="text-center text-muted mb-4">
-                    Silakan lengkapi formulir peminjaman lab di bawah ini untuk mengajukan permohonan
-                </p>
-                <form id="reservationForm">
-                    <div class="mb-3">
-                        <label for="namaOrganisasi" class="form-label">Nama Organisasi</label>
-                        <input type="text" class="form-control" id="namaOrganisasi" placeholder="Masukkan nama organisasi">
+    <main class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Kolom Kiri - Informasi Lab -->
+            <div class="col-md-5 info-section d-none d-md-block">
+                <div class="text-center">
+                    <h1 class="display-5 mb-4">LABORATORIUM KOMPUTER</h1>
+                    <h3 class="mb-4">Fasilitas Unggulan</h3>
+                    <ul class="feature-list">
+                        <li>✓ Ruang Ber-AC & CCTV 24 Jam</li>
+                        <li>✓ 50 Unit Komputer i7 Terbaru</li>
+                        <li>✓ Jaringan Internet 1Gbps</li>
+                        <li>✓ Printer Laser Warna</li>
+                        <li>✓ LCD Proyektor & Sound System</li>
+                    </ul>
+                    
+                    <img src="Mulmed (3).jpg" 
+                         alt="Lab Komputer" 
+                         class="img-fluid square lab-img">
+                    
+                    <div class="mt-4 operating-hours">
+                        <h4>Jam Operasional</h4>
+                        <p class="mb-1">Senin - Jumat: 08.00 - 20.00 WIB</p>
+                        <p>Sabtu: 08.00 - 15.00 WIB</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="acaraKegiatan" class="form-label">Acara / Kegiatan</label>
-                        <input type="text" class="form-control" id="acaraKegiatan" placeholder="Masukkan acara/kegiatan">
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="jumlahPeserta" class="form-label">Jumlah Peserta</label>
-                            <input type="number" class="form-control" id="jumlahPeserta" placeholder="Masukkan jumlah peserta (orang)">
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <label for="waktuMulai" class="form-label">Waktu Mulai</label>
-                            <input type="time" class="form-control" id="waktuMulai">
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <label for="waktuSelesai" class="form-label">Waktu Selesai</label>
-                            <input type="time" class="form-control" id="waktuSelesai">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="tanggalPinjam" class="form-label">Tanggal Pinjam</label>
-                            <input type="date" class="form-control" id="tanggalPinjam">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="proposalKegiatan" class="form-label">Unggah Proposal Kegiatan</label>
-                            <input type="file" class="form-control" id="proposalKegiatan">
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="catatan" class="form-label">Catatan</label>
-                        <textarea class="form-control" id="catatan" rows="4" placeholder="Masukkan catatan"></textarea>
-                    </div>
-                    <div class="d-flex justify-content-center gap-3 mt-4">
-                        <button type="button" class="btn btn-success" id="submitBtn">Submit</button>
-                        <button type="reset" class="btn btn-danger">Cancel</button>
-                    </div>
-                </form>
-                <hr class="mt-5">
-                <div id="output" class="mt-4"></div>
-            </article>
-        </section>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan - Formulir Reservasi -->
+            <div class="col-md-7">
+                <section class="card shadow mt-5 mx-3">
+                    <article class="card-body">
+                        <h2 class="text-center mb-3">Reservasi Laboratorium</h2>
+                        <hr>
+                        <p class="text-center text-muted mb-4">
+                            Silakan lengkapi formulir peminjaman lab di bawah ini untuk mengajukan permohonan
+                        </p>
+                        <form id="reservationForm">
+                            <div class="mb-3">
+                                <label for="namaOrganisasi" class="form-label">Nama Organisasi</label>
+                                <input type="text" class="form-control" id="namaOrganisasi" placeholder="Masukkan nama organisasi">
+                            </div>
+                            <div class="mb-3">
+                                <label for="acaraKegiatan" class="form-label">Acara / Kegiatan</label>
+                                <input type="text" class="form-control" id="acaraKegiatan" placeholder="Masukkan acara/kegiatan">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="jumlahPeserta" class="form-label">Jumlah Peserta</label>
+                                    <input type="number" class="form-control" id="jumlahPeserta" placeholder="Masukkan jumlah peserta (orang)">
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="waktuMulai" class="form-label">Waktu Mulai</label>
+                                    <input type="time" class="form-control" id="waktuMulai">
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="waktuSelesai" class="form-label">Waktu Selesai</label>
+                                    <input type="time" class="form-control" id="waktuSelesai">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="tanggalPinjam" class="form-label">Tanggal Pinjam</label>
+                                    <input type="date" class="form-control" id="tanggalPinjam">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="proposalKegiatan" class="form-label">Unggah Proposal Kegiatan</label>
+                                    <input type="file" class="form-control" id="proposalKegiatan">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="catatan" class="form-label">Catatan</label>
+                                <textarea class="form-control" id="catatan" rows="4" placeholder="Masukkan catatan"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-center gap-3 mt-4">
+                                <button type="button" class="btn btn-success" id="submitBtn">Submit</button>
+                                <button type="reset" class="btn btn-danger">Cancel</button>
+                            </div>
+                        </form>
+                        <hr class="mt-5">
+                        <div id="output" class="mt-4"></div>
+                    </article>
+                </section>
+            </div>
+        </div>
     </main>
 
     <script>
@@ -84,24 +139,28 @@
             const proposalKegiatan = document.getElementById("proposalKegiatan").files[0];
             const catatan = document.getElementById("catatan").value;
 
-            let proposalKegiatanName = "Tidak ada file yang diunggah";
+            let proposalLink = "Tidak ada file yang diunggah";
             if (proposalKegiatan) {
-                const fileUrl = URL.createObjectURL(proposalKegiatan);
-                proposalKegiatanName = `<a href="${fileUrl}" download="${proposalKegiatan.name}" 
-                class="text-decoration-none">📥 ${proposalKegiatan.name}
-                </a>`;
+                const fileURL = URL.createObjectURL(proposalKegiatan);
+                proposalLink = `<a href="${fileURL}" download="${proposalKegiatan.name}" 
+                                class="text-decoration-none btn btn-outline-primary btn-sm">
+                                📥 Download ${proposalKegiatan.name}
+                                </a>`;
             }
+
             const output = `
-                <h4>Hasil Reservasi</h4>
-                <ul>
-                    <li><strong>Nama Organisasi:</strong> ${namaOrganisasi}</li>
-                    <li><strong>Acara / Kegiatan:</strong> ${acaraKegiatan}</li>
-                    <li><strong>Jumlah Peserta:</strong> ${jumlahPeserta} orang</li>
-                    <li><strong>Waktu:</strong> ${waktuMulai} - ${waktuSelesai}</li>
-                    <li><strong>Tanggal Pinjam:</strong> ${tanggalPinjam}</li>
-                    <li><strong>Proposal Kegiatan:</strong> ${proposalKegiatanName}</li>
-                    <li><strong>Catatan:</strong> ${catatan}</li>
-                </ul>
+                <div class="alert alert-success">
+                    <h4 class="alert-heading">Reservasi Berhasil!</h4>
+                    <ul class="mb-0">
+                        <li><strong>Nama Organisasi:</strong> ${namaOrganisasi}</li>
+                        <li><strong>Acara/Kegiatan:</strong> ${acaraKegiatan}</li>
+                        <li><strong>Jumlah Peserta:</strong> ${jumlahPeserta} orang</li>
+                        <li><strong>Waktu:</strong> ${waktuMulai} - ${waktuSelesai}</li>
+                        <li><strong>Tanggal:</strong> ${tanggalPinjam}</li>
+                        <li><strong>Proposal:</strong> ${proposalLink}</li>
+                        <li><strong>Catatan:</strong> ${catatan}</li>
+                    </ul>
+                </div>
             `;
             document.getElementById("output").innerHTML = output;
         });
